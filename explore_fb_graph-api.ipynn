@@ -1,0 +1,113 @@
+{
+ "metadata": {
+  "name": "Untitled0"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import facebook\ngraph = facebook.GraphAPI(\"CAACEdEose0cBADcatqYJalWMhs6ZAfY1dHx7dTfhTSFno7tgxUoSXbTn7ZA3UxCdSg46dsktuvkBfQ1nb1xZBS9jtnZCQiVk5kyqW5KGJidZBPzZAwEvAbxFpSI5J0dLOufCmOKCxuB075PfoZBCBhWNNB4kMLHDUldqI1xWVEycNgoTKZArRwZAuUfSa2BjwscwZD\")",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 21
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "graph",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 22,
+       "text": "<facebook.GraphAPI at 0x1c90210>"
+      }
+     ],
+     "prompt_number": 22
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "ba_statuses = graph.get_object(\"britishairways\",fields='statuses')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 23
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "ba_statuses.keys()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 24,
+       "text": "['paging', 'data']"
+      }
+     ],
+     "prompt_number": 24
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "sts = ba_statuses['statuses']",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 13
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "sts.keys()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 18,
+       "text": "['paging', 'data']"
+      }
+     ],
+     "prompt_number": 18
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "data = sts['data']",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "for i,e in enumerate(data):\n    print i,e['message']\n    print \"--------------------------\",e[\"updated_time\"]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "0 Flying to US or Europe for higher studies? Now you can earn enough bonus Avios to get an extra trip, absolutely free! All you have to do is enrol in the British Airways Executive Club programme.\nLearn more here http://bit.ly/1afykPd\n-------------------------- 2013-08-12T03:30:53+0000\n1 Best of luck to British Airways ambassador Justin Rose at the US PGA this week! Send him your good luck messages here!\n-------------------------- 2013-08-08T07:00:33+0000\n2 Planning to fly with your baby? We\u2019ll do everything to make it a pleasant journey for you. Watch this video to find out how: http://goo.gl/JpXdoz\n-------------------------- 2013-08-01T03:30:07+0000\n3 Claire our Destination Manager for European Beaches will be answering your questions tomorrow Friday 7th June (10am-3pm GMT). \nSo tell us - what would you like to know about European beaches?\n-------------------------- 2013-06-06T09:53:44+0000\n4 Claire our Destination Manger for European Beaches will be answering your questions tomorrow Friday 7th June (10am-3pm GMT) and giving you tips on the lively resorts, idyllic beauty spots and great kids facilities in Cyprus. \n\nSo tell us - what would you like to know about European beaches?\n-------------------------- 2013-06-06T09:00:05+0000\n5 We hope you've been enjoying playing our Instant Avios competition. To find out more about our Executive Club click here http://bit.ly/ZFVU0u\n\nWhere would you fly if you won 60,000 Avios?\n-------------------------- 2013-04-30T14:43:47+0000\n6 Spend 3 days in London to kickstart your European venture. Enter the 'Calling Innovative Companies' contest and win a trip to London. \nHurry contest ends 31 March. \nLog in now : http://bit.ly/ZkROu9\n-------------------------- 2013-03-19T05:30:04+0000\n7 Did you know Brit entrepreneur Simon Dolan became the world's first 'Twitter Dragon', offering to give away \u00a35million of his own money to anyone who could wow him with a 140-character business pitch on Twitter. What would your pitch be?    Enter the 'Calling Innovative Companies contest'. http://bit.ly/ZkROu9\n-------------------------- 2013-03-14T11:00:08+0000\n8 Breeze your way through the airport whether you are transferring between flights or visiting London . With stylish shops and luxurious Galleries lounges , Terminal 5 will change the way you fly forever . \n\nExperience Terminal 5 . Its the home of British Airways .\n\nFind out more http://bit.ly/100F3DJ\n-------------------------- 2013-03-13T15:30:10+0000\n9 Tell us why your company is ready for a UK adventure and we will fly you to UK to meet and network with investors, incubators and companies. Enter the 'Calling Innovative Companies contest'.http://bit.ly/ZkROu9\n-------------------------- 2013-03-12T04:30:08+0000\n10 Be sure to come and join us at the The Great Big British Bash in Mumbai at Phoneix Mall, Lower Parel tomorrow, to enjoy fashion, music and all thing Great Britain. \n\nIf you can't make it, we will be sharing pictures and videos through-out the event, so stay tuned!\n-------------------------- 2013-02-14T04:00:09+0000\n11 We're having an event and we want to invite you!! Be sure to come and meet us for The Great Big British Bash in Mumbai at Phoneix Mall, Lower Parel, 15-18 February to join in all the British fun and excitement.\n-------------------------- 2013-02-09T07:23:01+0000\n12 Weather continues to affect travel in the UK. For flight status updates, contact numbers & rebooking options please see http://bit.ly/10BKn4Z \n\nPlease note: we are unable to answer travel questions here on Facebook. Please use the contact details provided on our website page linked above.\n-------------------------- 2013-01-19T12:11:06+0000\n13 We'd like to welcome our new fans from India who have joined us recently. \n\nWe're looking forward to sharing our latest updates with you here.\n\nLet us know if you're travelling with us soon.\n-------------------------- 2012-10-03T12:06:29+0000\n14 Finishing on a high! \n\nFantastic results for ParalympicsGB to round off the Games in the T54 Men's and Women's Marathons! Gold and Silver!\n-------------------------- 2012-09-09T12:20:13+0000\n15 A fantastic performance by ParalympicsGB today! Gold in the Mixed T 1-2 Road Race, Silver in the Mixed Individual BC1 Boccia, Silver in the woman's 100m Free S6, and Bronze in the woman's 100m SB9 Breaststroke - incredible! Show them your support everyone.\n-------------------------- 2012-09-08T17:03:42+0000\n16 Wow! ParalympicsGB race to golden glory in the 100m T44 and the 800m T54! Fantastic results!\n-------------------------- 2012-09-06T20:40:15+0000\n17 It's the first day of Wheelchair Rugby. And it all kicks off around 2pm with ParalympicsGB competing. Let's show them the #HomeAdvantage\n-------------------------- 2012-09-05T11:45:42+0000\n18 Good Morning! What sport will you be watching today? Here's wishing ParalympicsGB the best of luck! #HomeAdvantage\n-------------------------- 2012-09-05T09:19:19+0000\n19 A Bronze, a Silver and a Gold from the ParalympicsGB girls in the Aquatics Centre tonight. We are watching in awe. \n\nHave the Games inspired you to achieve a goal?\n-------------------------- 2012-09-03T17:48:11+0000\n20 If you could sum up your experience of the Games so far in three words, what would they be?\n-------------------------- 2012-09-03T10:40:39+0000\n21 There's no place like velodrome - Congratulations to ParalympicsGB! Silver and Gold this afternoon in Track Cycling #HomeAdvantage\n-------------------------- 2012-09-02T15:07:50+0000\n22 Good Luck to Shelly Woods competing right now in the 5000m final.You've got the #HomeAdvantage and we're all behind you. Which Paralympian has most inspired you this week?\n-------------------------- 2012-09-02T09:50:45+0000\n23 It was a very tense race for a while but didn't that go swimmingly for ParalympicsGB? A Bronze, a Gold AND a new World Record in the pool this evening. Now that's the #HomeAdvantage! What has been your highlight from the day?\n-------------------------- 2012-09-01T17:23:55+0000\n24 Gold for ParalympicsGB! A glittering start to the Games! \n\nLet's hope it's the first of many!\n-------------------------- 2012-08-30T16:10:54+0000\n"
+      }
+     ],
+     "prompt_number": 20
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
