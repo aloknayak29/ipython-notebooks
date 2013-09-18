@@ -6,8 +6,8 @@ pswd = ""
 
 driver = webdriver.Firefox()
 
-
-driver.get("http://www.quora.com/")
+profile = webdriver.FirefoxProfile("D:\Users\u198138\AppData\Roaming\Mozilla\Firefox\Profiles\9m6t4voo.default")
+driver = webdriver.Firefox(profile)
 
 
 email = driver.find_element_by_name('email')
